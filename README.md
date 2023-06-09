@@ -2,8 +2,6 @@
 
 Lenovo Regional Channel Management Web Application
 
-created by Sanoj Hettige (sanoj@chimaera.my)
-
 ## Project setup
 ```
 npm install
