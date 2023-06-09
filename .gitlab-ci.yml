@@ -1,0 +1,104 @@
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+
+stages:
+  - setup
+  - build
+  - deploy
+
+setup_development:
+  stage: setup
+  environment:
+    name: development
+  script:
+    - npm install
+  only:
+    - development
+
+setup_staging:
+  stage: setup
+  environment:
+    name: staging
+  script:
+    - npm install
+  only:
+    - staging
+
+setup_production:
+  stage: setup
+  environment:
+    name: production
+  script:
+    - npm install
+  only:
+    - master
+
+build_development:
+  stage: build
+  environment:
+    name: development
+  script:
+    - npm run development
+  artifacts:
+    paths:
+      - dist
+  only:
+    - development
+
+build_staging:
+  stage: build
+  environment:
+    name: staging
+  script:
+    - npm run staging
+  artifacts:
+    paths:
+      - dist
+  only:
+    - staging
+
+build_production:
+  stage: build
+  environment:
+    name: production
+  script:
+    - npm run production
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master
+
+deploy_development:
+  stage: deploy
+  script:
+    - cp -r dist/. /var/www/lrcm_dev/
+    - sudo chown -R www-data:www-data /var/www/lrcm_dev/
+  environment:
+    name: development
+    url: https://lrcm.chimaera.dev/
+  only:
+    - development
+
+deploy_staging:
+  stage: deploy
+  script:
+    - cp -r dist/. /var/www/lrcm_test/
+    - sudo chown -R www-data:www-data /var/www/lrcm_test/
+  environment:
+    name: staging
+    url: https://lrcm.stg.chimaera.dev/
+  only:
+    - staging
+
+deploy_production:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://lrcm.chimaera.my
+  only:
+    - master

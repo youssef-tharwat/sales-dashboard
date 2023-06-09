@@ -1,0 +1,22 @@
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.black-text {
+  color: black;
+}
+
+.width-fit-content {
+  width: fit-content;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@include lightFontUtil;
+@include regularFontUtil;
+@include mediumFontUtil;
+@include semiBoldFontUtil;
+@include boldFontUtil;
+@include extraBoldFontUtil;

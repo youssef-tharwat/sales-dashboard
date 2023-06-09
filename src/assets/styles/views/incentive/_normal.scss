@@ -1,0 +1,34 @@
+.vdp-datepicker {
+  input {
+    width: 100%;
+    background: #fff;
+    min-height: 5rem;
+    padding-left: 1.5rem;
+    border-radius: 0;
+    font-family: "Poppins", sans-serif;
+    height: 4.5rem;
+    border: 1px solid #dddfe1;
+    font-weight: 500;
+
+    &:focus {
+      background: #f3f6f9;
+    }
+  }
+
+  .vdp-datepicker__calendar {
+    header,
+    .cell {
+      color: black;
+    }
+    .cell.disabled{
+      color: #ddd;
+    }
+  }
+}
+
+.pagination .page-item.active .page-link{
+  z-index: 0;
+}
+spring-spinner-part.top {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,21 @@
+@import "./components/imports.scss";
+@import "./components/variables.scss";
+@import "./components/mixins.scss";
+@import "./components/includes.scss";
+@import "./components/util.scss";
+
+html,
+body,
+#app {
+  height: 100%;
+  font-family: $font-family-base !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  text-rendering: auto;
+}

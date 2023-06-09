@@ -1,0 +1,95 @@
+{
+  "_from": "vue2-daterange-picker",
+  "_id": "vue2-daterange-picker@0.3.0",
+  "_inBundle": false,
+  "_integrity": "sha512-/zbkxOMKc4xK/dZFKnX6Hcr4c1CtAz0RuVc4JFn622WZRgtJyvYWpm9NuYv1Pk2/GPM58QJlbJV55WuocAl7Hg==",
+  "_location": "/vue2-daterange-picker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vue2-daterange-picker",
+    "name": "vue2-daterange-picker",
+    "escapedName": "vue2-daterange-picker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue2-daterange-picker/-/vue2-daterange-picker-0.3.0.tgz",
+  "_shasum": "4df568618eeb4943994fb5c09ed5496907822729",
+  "_spec": "vue2-daterange-picker",
+  "_where": "/Developer/www/Lenovo/admin",
+  "author": {
+    "name": "Nikola Kostadinov",
+    "email": "nikolakk@gmail.com"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "bugs": {
+    "url": "https://github.com/Innologica/vue2-daterange-picker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "moment": "^2.24.0",
+    "vue": "^2.6.10",
+    "vue-clickaway": "^2.2.2"
+  },
+  "deprecated": false,
+  "description": "Vue2 date range picker based on https://github.com/dangrossman/bootstrap-daterangepicker (no jQuery)",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-plugin-unit-mocha": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "@vuedoc/parser": "^1.4.0",
+    "acorn": "^6.1.1",
+    "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "chai": "^4.1.2",
+    "concurrently": "^4.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "markdown-it-footnote": "^3.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^0.14.11",
+    "webpack": "^4.35.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "homepage": "https://github.com/Innologica/vue2-daterange-picker#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "vue2-daterange-picker",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Innologica/vue2-daterange-picker.git"
+  },
+  "scripts": {
+    "components:parse": "node ./docs/.scripts/parse.js",
+    "components:watch": "watch \"npm run components:parse\" ./src",
+    "docs:build": "vuepress build docs",
+    "docs:dev": "concurrently \"npm run components:watch\" \"vuepress dev docs\"",
+    "lib": "vue-cli-service build --target lib --name vue2-daterange-picker ./src/index.js",
+    "lint": "vue-cli-service lint",
+    "prepublishOnly": "npm run lib",
+    "unit": "vue-cli-service test:unit"
+  },
+  "version": "0.3.0"
+}

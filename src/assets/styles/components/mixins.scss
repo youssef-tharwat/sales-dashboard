@@ -1,0 +1,128 @@
+@mixin text($text-size, $text-color, $text-font) {
+  color: $text-color;
+  font-size: $text-size;
+  font-family: $text-font;
+}
+
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+
+
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+@mixin respond-below($breakpoint) {
+
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+@mixin respond-between($lower, $upper) {
+
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+
+
+  } @else {
+
+
+    @if (map-has-key($breakpoints, $lower)==false) {
+
+
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+
+    @if (map-has-key($breakpoints, $upper)==false) {
+
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+
+@mixin lightFontUtil {
+  @each $size, $px in $typography {
+  '.light-#{$size}' {
+    font-size: $px !important;
+    font-family: $font-family-light !important;
+    font-weight: 300 !important;
+  }
+  }
+}
+
+@mixin regularFontUtil {
+  @each $size, $px in $typography {
+  '.regular-#{$size}' {
+    font-size: $px;
+    font-family: $font-family-base;
+    font-weight: normal;
+  }
+  }
+}
+
+@mixin mediumFontUtil {
+  @each $size, $px in $typography {
+  '.medium-#{$size}' {
+    font-size: $px !important;
+    font-family: $font-family-medium !important;
+    font-weight: 500 !important;
+  }
+  }
+}
+
+@mixin semiBoldFontUtil {
+  @each $size, $px in $typography {
+  '.semiBold-#{$size}' {
+    font-size: $px !important;
+    font-family: $font-family-semi-bold !important;
+    font-weight: 600 !important;
+  }
+  }
+}
+
+@mixin boldFontUtil {
+  @each $size, $px in $typography {
+  '.bold-#{$size}' {
+    font-size: $px !important;
+    font-family: $font-family-bold !important;
+    font-weight: 700;
+  }
+  }
+}
+
+@mixin extraBoldFontUtil {
+  @each $size, $px in $typography {
+  '.extraBold-#{$size}' {
+    font-size: $px;
+    font-family: $font-family-extra-bold;
+    font-weight: 800;
+  }
+  }
+}
